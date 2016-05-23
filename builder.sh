@@ -3,9 +3,10 @@ export HOME=$(pwd)
 mkdir opi-diskimage-arch
 cd opi-diskimage-arch
 mkdir imagemount
-git clone https://github.com/faddat/linux -b working-image --depth=1
+git clone https://github.com/montjoie/linux --depth=1
 git clone https://github.com/u-boot/u-boot --depth=1
 cd linux
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- sunxi_defconfig
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 cd ../u-boot
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- orangepi_pc_defconfig
