@@ -28,10 +28,10 @@ sudo mkfs.ext4 /dev/mapper/loop1p1
 sudo mount /dev/mapper/loop1p1 $HOME/opi-diskimage-arch/imagemount
 sudo wget http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz
 sudo bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C $HOME/opi-diskimage-arch/imagemount
-sudo rm ~/opi-diskimage-arch/imagemount/boot/dtb/*
-sudo cp ~/opi-diskimage-arch/u-boot/arch/arm/dts/*.dtb ~/opi-diskimage-arch/imagemount/boot/dtb
-cp $HOME/opi-diskimage-arch/linux/arch/arm/boot/zImage $HOME/opi-diskimage-arch/imagemount/boot/zImage
-cp $HOME/opi-diskimage-arch/linux/arch/arm/boot/zImage $HOME/opi-diskimage-arch/imagemount/boot/zImage
+sudo rm ~/opi-diskimage-arch/imagemount/boot/dtbs/*.*
+sudo cp ~/opi-diskimage-arch/u-boot/arch/arm/dts/*.dtb ~/opi-diskimage-arch/imagemount/boot/dtbs
+sudo cp $HOME/opi-diskimage-arch/linux/arch/arm/boot/zImage $HOME/opi-diskimage-arch/imagemount/boot/zImage
+sudo cp $HOME/opi-diskimage-arch/linux/arch/arm/boot/zImage $HOME/opi-diskimage-arch/imagemount/boot/zImage
 sudo sync
 
 
