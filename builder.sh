@@ -15,7 +15,7 @@ umount /dev/loop1
 umount /dev/mapper/loop1p1
 sudo dd if=/dev/zero of=~/opi-arch-fresh.img bs=1024 count=1048576
 export card=/dev/loop1
-sudo dd if=/dev/zero of=${card} bs=1k count=1024 seek=1
+sudo dd if=/dev/zero of=${card} bs=1k count=4096 seek=1
 sudo dd if=~/opi-diskimage-arch/u-boot/u-boot-sunxi-with-spl.bin of=${card} bs=1024 seek=8
 sudo losetup /dev/loop1 ~/opi-arch-fresh.img
 sudo fdisk -u /dev/loop1 <<EOF
