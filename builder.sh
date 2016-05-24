@@ -12,6 +12,7 @@ cd ../u-boot
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- orangepi_pc_defconfig
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 umount /dev/loop1
+umount /dev/mapper/loop1p1
 sudo dd if=/dev/zero of=~/opi-arch-fresh.img bs=1024 count=1048576
 export card=/dev/loop1
 sudo dd if=/dev/zero of=${card} bs=1k count=1023 seek=1
