@@ -18,7 +18,7 @@ export card=/dev/loop1
 sudo dd if=/dev/zero of=${card} bs=1k count=1023 seek=1
 sudo dd if=~/opi-diskimage-arch/u-boot/u-boot-sunxi-with-spl.bin of=${card} bs=1024 seek=8
 sudo losetup /dev/loop1 ~/opi-arch-fresh.img
-sudo fdisk -u -p /dev/loop1 <<EOF
+sudo fdisk -u /dev/loop1 <<EOF
 n
 p
 1
