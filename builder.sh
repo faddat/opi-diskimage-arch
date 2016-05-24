@@ -19,12 +19,15 @@ sudo dd if=/dev/zero of=${card} bs=1k count=1023 seek=1
 sudo dd if=~/opi-diskimage-arch/u-boot/u-boot-sunxi-with-spl.bin of=${card} bs=1024 seek=8
 sudo losetup /dev/loop1 ~/opi-arch-fresh.img
 sudo fdisk -u /dev/loop1 <<EOF
+d
 n
 p
 1
 
+
 w
 EOF
+partprobe
 sudo kpartx -v -a /dev/loop1
 sudo mkfs.ext4 /dev/mapper/loop1p1
 sudo mount /dev/mapper/loop1p1 $HOME/opi-diskimage-arch/imagemount
