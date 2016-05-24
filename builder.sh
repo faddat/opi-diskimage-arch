@@ -15,7 +15,7 @@ sudo dd if=/dev/zero of=~/opi-arch-fresh.img bs=1024 count=1048576
 export card=/dev/loop1
 sudo dd if=/dev/zero of=${card} bs=1k count=1023 seek=1
 sudo dd if=~/opi-diskimage-arch/u-boot/u-boot-sunxi-with-spl.bin of=${card} bs=1024 seek=8
-sudo losetup /dev/loop1 ~/myDisk.img
+sudo losetup /dev/loop1 ~/opi-arch-fresh.img
 sudo fdisk -u -p /dev/loop1 <<EOF
 n
 p
@@ -32,6 +32,6 @@ sudo rm ~/opi-diskimage-arch/imagemount/boot/dtbs/*.*
 sudo cp ~/opi-diskimage-arch/u-boot/arch/arm/dts/*.dtb ~/opi-diskimage-arch/imagemount/boot/dtbs
 sudo cp $HOME/opi-diskimage-arch/linux/arch/arm/boot/zImage $HOME/opi-diskimage-arch/imagemount/boot/zImage
 sudo sync
-
+sudo dd if=/dev/loop1 
 
 
