@@ -11,6 +11,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 cd ../u-boot
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- orangepi_pc_defconfig
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
+umount /dev/loop1
 sudo dd if=/dev/zero of=~/opi-arch-fresh.img bs=1024 count=1048576
 export card=/dev/loop1
 sudo dd if=/dev/zero of=${card} bs=1k count=1023 seek=1
@@ -32,6 +33,6 @@ sudo rm ~/opi-diskimage-arch/imagemount/boot/dtbs/*.*
 sudo cp ~/opi-diskimage-arch/u-boot/arch/arm/dts/*.dtb ~/opi-diskimage-arch/imagemount/boot/dtbs
 sudo cp $HOME/opi-diskimage-arch/linux/arch/arm/boot/zImage $HOME/opi-diskimage-arch/imagemount/boot/zImage
 sudo sync
-sudo dd if=/dev/loop1 
+sudo dd if=/dev/loop1 of=finishedproduct.raw
 
 
