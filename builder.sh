@@ -31,7 +31,6 @@ sudo bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C $HOME/opi-diskimage-arch/im
 sudo rm ~/opi-diskimage-arch/imagemount/boot/dtbs/*.*
 sudo cp ~/opi-diskimage-arch/u-boot/arch/arm/dts/*.dtb ~/opi-diskimage-arch/imagemount/boot/dtbs
 sudo cp $HOME/opi-diskimage-arch/linux/arch/arm/boot/zImage $HOME/opi-diskimage-arch/imagemount/boot/zImage
-sudo cp $HOME/opi-diskimage-arch/linux/arch/arm/boot/zImage $HOME/opi-diskimage-arch/imagemount/boot/zImage
 sudo sync
 
 
